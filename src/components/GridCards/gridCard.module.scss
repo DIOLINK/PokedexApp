@@ -31,7 +31,7 @@ $boxShadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
 }
 
 .pokemon {
-  min-width: 250px;
+  width: clamp(280px, 33%, 380px);
   min-height: 250px;
   border-radius: 1rem;
   background-color: white;

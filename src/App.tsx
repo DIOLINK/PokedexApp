@@ -6,9 +6,9 @@ import {
 import { usePokemons } from '@/hook/usePokemons';
 
 function App() {
-  const { pokemons, typePokemon, setTypePokemon } = usePokemons();
+  const { pokemons, typePokemon, setTypePokemon, isLoading } = usePokemons();
   return (
-    <PokemonsContext.Provider value={{ pokemons, typePokemon }}>
+    <PokemonsContext.Provider value={{ pokemons, typePokemon, isLoading }}>
       <PokemonsToggleContext.Provider value={{ setTypePokemon }}>
         <Header />
         <GridCards />
