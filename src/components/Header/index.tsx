@@ -1,7 +1,16 @@
-import { logo } from '../../assets/index';
-import { listHeader } from '../../utils/index';
+import { logo } from '@/assets';
+import { PokemonsToggleContext } from '@/context/PokemonsContext';
+import { listHeader } from '@/utils';
+import { colorType } from '@/utils/helpers';
+import { useContext } from 'react';
 import styles from './header.module.scss';
 export const Header = () => {
+  const setTypePokemon = useContext(PokemonsToggleContext);
+
+  const handleTypePokemon = (value: string): void => {
+    setTypePokemon?.setTypePokemon(value);
+  };
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -12,8 +21,9 @@ export const Header = () => {
               <button
                 className={styles.btnHeader}
                 style={{
-                  backgroundColor: `var(--type-${key})`,
+                  backgroundColor: colorType(key),
                 }}
+                onClick={() => handleTypePokemon(key)}
               >
                 {listHeader[key]}
               </button>

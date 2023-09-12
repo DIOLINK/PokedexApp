@@ -12,7 +12,7 @@ export interface DataGetPokemon {
   name: string;
   order: number;
   past_types?: [];
-  sprites: Sprite[];
+  sprites: Sprite;
   stats: Stats[];
   types: Types[];
   weight: number;

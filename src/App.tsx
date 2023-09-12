@@ -1,11 +1,19 @@
-import { Header } from '@/components/Header';
+import { GridCards, Header } from '@/components';
+import {
+  PokemonsContext,
+  PokemonsToggleContext,
+} from '@/context/PokemonsContext';
+import { usePokemons } from '@/hook/usePokemons';
 
 function App() {
+  const { pokemons, typePokemon, setTypePokemon } = usePokemons();
   return (
-    <>
-      <Header />
-      <div>home</div>
-    </>
+    <PokemonsContext.Provider value={{ pokemons, typePokemon }}>
+      <PokemonsToggleContext.Provider value={{ setTypePokemon }}>
+        <Header />
+        <GridCards />
+      </PokemonsToggleContext.Provider>
+    </PokemonsContext.Provider>
   );
 }
 
