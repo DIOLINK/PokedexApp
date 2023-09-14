@@ -17,7 +17,7 @@ export const Header = () => {
         <img src={logo} alt="logo" />
         <ul className={styles.navList}>
           {Object.keys(listHeader).map((key, index) => (
-            <li className="nav-item" key={key + index}>
+            <li className={styles.navItem} key={key + index}>
               <button
                 className={styles.btnHeader}
                 style={{

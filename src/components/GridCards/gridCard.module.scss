@@ -6,7 +6,6 @@ $borderRadius: 10px;
 $boxShadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
 
 
-.allPokemons,
 .nameContainer,
 .pokemon,
 .pokemonImg,
@@ -17,9 +16,10 @@ $boxShadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
 }
 
 .allPokemons {
-  gap: 25px;
   max-width: $maxWidth;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
   flex-wrap: wrap;
   padding: 25px;
   margin: 0 auto;
@@ -31,7 +31,6 @@ $boxShadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
 }
 
 .pokemon {
-  width: clamp(280px, 33%, 380px);
   min-height: 250px;
   border-radius: 1rem;
   background-color: white;
@@ -125,4 +124,22 @@ $boxShadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
   gap: 1rem;
   font-size: 1rem;
   padding: 1rem;
+}
+
+.empty {
+  font-size: 5rem;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+@media screen and (max-width: $sizeTable) {
+  .allPokemons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: $sizeMobile) {
+  .allPokemons {
+    grid-template-columns: 1fr;
+  }
 }
