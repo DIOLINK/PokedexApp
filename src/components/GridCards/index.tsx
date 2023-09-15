@@ -19,13 +19,6 @@ export const GridCards = () => {
   ) {
     return <h1 className={styles.empty}>{EMPTY_POKEMONS}</h1>;
   }
-  console.log(
-    'first',
-    filterPokemonByType(
-      pokemonContext?.pokemons,
-      pokemonContext?.typePokemon
-    ).map((pokemon) => pokemon).length === 0
-  );
   return (
     <div className={styles.allPokemons}>
       {filterPokemonByType(
