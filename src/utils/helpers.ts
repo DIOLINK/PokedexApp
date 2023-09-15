@@ -27,3 +27,6 @@ export function filterPokemonByType(
     )
   );
 }
+
+export const setRoute = (route?: string): string =>
+  route ? `/PokedexApp/${route}` : '/PokedexApp/';
