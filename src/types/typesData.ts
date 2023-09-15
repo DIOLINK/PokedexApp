@@ -100,3 +100,70 @@ export interface Types {
   slot: number;
   type: SingleTypeBase;
 }
+
+export interface DataSpeciesPokemon {
+  base_happiness: number;
+  capture_rate: number;
+  color: SingleTypeBase;
+  egg_groups: SingleTypeBase[];
+  evolution_chain: EvolutionChain;
+  evolves_from_species: null;
+  flavor_text_entries: FlavorTextEntry[];
+  form_descriptions?: [];
+  forms_switchable: boolean;
+  gender_rate: number;
+  genera: Genera[];
+  generation: SingleTypeBase;
+  growth_rate: SingleTypeBase;
+  habitat: SingleTypeBase;
+  has_gender_differences: boolean;
+  hatch_counter: number;
+  id: number;
+  is_baby: boolean;
+  is_legendary: boolean;
+  is_mythical: boolean;
+  name: string;
+  names: Name[];
+  order: number;
+  pal_park_encounters: PalParkEncounter[];
+  pokedex_numbers: PokedexNumber[];
+  shape: SingleTypeBase;
+  varieties: Variety[];
+}
+
+export interface EvolutionChain {
+  url: string;
+}
+
+export interface FlavorTextEntry extends Language {
+  flavor_text: string;
+  version: SingleTypeBase;
+}
+
+export interface Genera extends Language {
+  genus: string;
+}
+
+export interface Name extends Language {
+  name: string;
+}
+
+export interface Language {
+  language: SingleTypeBase;
+}
+
+export interface PalParkEncounter {
+  area: SingleTypeBase;
+  base_score: number;
+  rate: number;
+}
+
+export interface PokedexNumber {
+  entry_number: number;
+  pokedex: SingleTypeBase;
+}
+
+export interface Variety {
+  is_default: boolean;
+  pokemon: SingleTypeBase;
+}

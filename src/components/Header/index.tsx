@@ -5,10 +5,10 @@ import { colorType } from '@/utils/helpers';
 import { useContext } from 'react';
 import styles from './header.module.scss';
 export const Header = () => {
-  const setTypePokemon = useContext(PokemonsToggleContext);
+  const contextTogglePokemon = useContext(PokemonsToggleContext);
 
   const handleTypePokemon = (value: string): void => {
-    setTypePokemon?.setTypePokemon(value);
+    contextTogglePokemon?.setTypePokemon(value);
   };
 
   return (
