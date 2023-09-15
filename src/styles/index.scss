@@ -8,6 +8,7 @@
   --type-fire: #f08030;
   --type-water: #6890f0;
   --type-grass: #78c850;
+  --type-plant: var(--type-grass);
   --type-electric: #f8d030;
   --type-ice: #98d8d8;
   --type-fighting: #c03028;
@@ -42,4 +43,9 @@ body {
 body {
   min-height: 100vh;
   background-color: var(--clr-gray);
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

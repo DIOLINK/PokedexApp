@@ -1,0 +1,129 @@
+@import "../../styles/constants.scss";
+@import "../../styles/colors.scss";
+
+$backgroundColor: $clr-gray;
+$borderRadius: 10px;
+
+.container {
+  position: relative;
+}
+
+.btnBack {
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+
+.img {
+  &:hover {
+    animation: shake-right 0.8s linear both
+  }
+}
+
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 300px;
+  gap: 0.5rem;
+
+  h2 {
+    text-align: center;
+    animation: tracking-in-contract 0.6s linear both
+  }
+}
+
+.type {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  span {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background-color: $backgroundColor;
+    padding: 5px;
+    border-radius: $borderRadius;
+    cursor: default;
+  }
+}
+
+
+.keyBoard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  button {
+    flex-grow: 1;
+    padding: 1rem;
+    flex-basis: 90px;
+  }
+}
+
+.titleStats {
+  text-transform: uppercase;
+}
+
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: .6em;
+    opacity: 0
+  }
+
+  40% {
+    opacity: .6
+  }
+
+  100% {
+    letter-spacing: normal;
+    opacity: 1
+  }
+}
+
+@keyframes shake-right {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 100% 50%
+  }
+
+  10% {
+    transform: rotate(2deg)
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg)
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg)
+  }
+
+  80% {
+    transform: rotate(-2deg)
+  }
+
+  90% {
+    transform: rotate(2deg)
+  }
+}
+
+.progressBar {
+  height: 2rem;
+}

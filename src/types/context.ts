@@ -1,11 +1,13 @@
 import { DataGetPokemon } from '@/types';
 
 export interface PokemonContext {
+  isLoading: boolean;
+  pokemon: DataGetPokemon | null;
   pokemons: DataGetPokemon[];
   typePokemon: string;
-  isLoading: boolean;
 }
 
 export interface PokemonToggleContext {
+  setIdPokemon: React.Dispatch<React.SetStateAction<number>>;
   setTypePokemon: React.Dispatch<React.SetStateAction<string>>;
 }

@@ -13,7 +13,7 @@ export function addZero(value: number | string): string | number {
 }
 
 export function colorType(value: string = 'all'): string {
-  return `var(--type-${value})`;
+  return `var(--type-${value.replace(/[^a-zA-Z]/g, '')}`;
 }
 
 export function filterPokemonByType(
@@ -28,5 +28,20 @@ export function filterPokemonByType(
   );
 }
 
-export const setRoute = (route?: string): string =>
-  route ? `/PokedexApp/${route}` : '/PokedexApp/';
+export const setRoute = (route?: string | number): string =>
+  route ? `/PokedexApp/${route}` : '/PokedexApp';
+
+export const OFFICIAL_ARTWORK = 'official-artwork';
+
+export const MAX_VALUE = '100';
+
+export const colorProgress: {
+  [key: string]: { variant: string; striped: boolean };
+} = {
+  hp: { variant: 'danger', striped: false },
+  attack: { variant: 'info', striped: false },
+  defense: { variant: 'success', striped: false },
+  'special-attack': { variant: 'danger', striped: true },
+  'special-defense': { variant: 'success', striped: true },
+  speed: { variant: 'warning', striped: false },
+};
