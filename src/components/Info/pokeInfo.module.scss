@@ -34,7 +34,8 @@ $borderRadius: 10px;
 
   h2 {
     text-align: center;
-    animation: tracking-in-contract 0.6s linear both
+    animation: tracking-in-contract 0.6s linear both;
+    cursor: default;
   }
 }
 
@@ -57,6 +58,23 @@ $borderRadius: 10px;
   }
 }
 
+.titleGames {
+  width: fit-content;
+  align-self: center;
+  text-shadow: 1px 1px 2px #00000057;
+  animation: tracking-in-contract 0.6s linear both;
+  background: linear-gradient(to right, var(--type-red), var(--type-blue), var(--type-yellow), var(--type-gold), var(--type-silver));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: default;
+}
+
+.btnText {
+  text-transform: capitalize;
+  letter-spacing: 0.05rem;
+  text-shadow: 1px 1px 2px #00000085;
+}
 
 .keyBoard {
   display: flex;

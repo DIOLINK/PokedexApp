@@ -60,17 +60,17 @@ export const Info = () => {
               </div>
               {speciePokemon?.genera
                 .filter(
-                  ({ language }) =>
-                    language.name === 'en' || language.name === 'ja'
+                  ({ language: { name } }) => name === 'en' || name === 'ja'
                 )
                 .map(({ genus }, index) => <p key={genus + index}>{genus}</p>)}
+              <h3 className={styles.titleGames}>Games</h3>
               <Stack
                 gap={2}
                 direction="horizontal"
-                className="col-md-5 mx-auto"
+                className="col-md-5 mx-auto justify-content-center"
               >
                 {speciePokemon?.flavor_text_entries
-                  .filter(({ language }) => language.name === 'en')
+                  .filter(({ language: { name } }) => name === 'en')
                   .slice(0, 5)
                   .map(({ version: { name } }, index) => (
                     <Button
@@ -78,7 +78,12 @@ export const Info = () => {
                       key={index}
                       onClick={() => setVersionSelected(name)}
                     >
-                      <strong>{name}</strong>
+                      <strong
+                        className={styles.btnText}
+                        style={{ color: `${colorType(name)}` }}
+                      >
+                        {name}
+                      </strong>
                     </Button>
                   ))}
               </Stack>
